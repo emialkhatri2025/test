@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="test" action="" method="POST">
+      {% csrf_token %}
+        {{ employee_update.as_p }}
+        <input type="submit" value= 'save' />
+
+    </form>
+
+
+
+  </body>
+</html>

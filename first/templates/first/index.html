@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Hello Python world</h1>
+  <div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, explicabo. Dolorem nobis reiciendis inventore molestiae, facilis amet illum, quas perspiciatis provident ea, soluta totam non vitae. Quia vero non, officiis?</p>
+  </div>
+  <di>
+
+
+  </div>
+  <!-- for the tips calculation input place for users -->
+  <div>
+    <div>
+      <h3>Tips Calculator</h3>
+      <div>
+        <form method="POST">
+          {% csrf_token %}
+          <label for="subTotal">Name: </label>
+          {{ form.name }}
+          <label for="Tax">Author: </label>
+          {{ form.author }}
+          <label for="total">Email: </label>
+          {{ form.emil }}
+          <label for="total">Describe: </label>
+          {{ form.describe }}
+        </form> <br>
+        <button type="submit" name="button">Submit</button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

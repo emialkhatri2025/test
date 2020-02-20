@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>This is awesome </p>
+  <p>
+    {% for employee_shows in employee_show %}
+
+      <li>
+      {{ employee_shows.name }}
+      {{employee_shows.department}}
+      {{ employee_shows.salary}}
+  <a href="{% url 'empEdit' employee_shows.id %}">Edit</a>
+  <a href="{% url 'deleteEdit' employee_shows.id %}">delete</a>
+  </li>
+    {% endfor %}
+  </p>
+    <a href="{% url 'empupdate'%}">
+  <input type="submit" name="" value="Add New employee">
+</a>
+
+  </body>
+</html>

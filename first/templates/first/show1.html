@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% for test_shows in test_show %}
+      <p>{{ test_shows.name }}</p>
+      <form action="{% url 'delete' test.id %}" method="POST">
+          <input type="submit" name="" value="delete">
+      </form>
+
+    {% endfor %}
+
+
+
+
+  </body>
+</html>
