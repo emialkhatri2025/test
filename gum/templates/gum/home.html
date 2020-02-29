@@ -1,4 +1,5 @@
 {% extends 'gum/base.html' %}
+{% load static %}
 {% block content %}
 <div class="jumbotron">
   <h1 class="display-4">Hello, world!</h1>
@@ -8,5 +9,23 @@
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
   </p>
+</div>
+<div class="testcard">
+  <div class="row">
+      {% for movies_types in movies_type %}
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ movies_types.movie_name }}</h5>
+        <p class="card-text">{{ movies_types.movie_actor }}</p>
+        <p class="card-text">{{ movies_types.movies_actress }}</p>
+        <p class="card-text">{{ movies_types.movie_released }}</p>
+        <a href="{% url 'gumhomeedit' movies_types.id %}" class="btn btn-primary">Edit</a>
+        <a href="{% url 'gumhomedelete' movies_types.id %}" class="btn btn-primary">Delete</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 </div>
 {% endblock %}

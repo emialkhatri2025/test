@@ -1,3 +1,5 @@
 from django.contrib import admin
+from gum.models import movies,movieType
 
-# Register your models here.
+admin.site.register(movies)
+admin.site.register(movieType)
