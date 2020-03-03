@@ -10,7 +10,7 @@ def home(request):
     return render(request, 'gum/home.html', contex)
 
 def home_post(request):
-    movies_post = movie_forms(request.POST or NONE)
+    movies_post = movie_forms(request.POST or None)
     if movies_post.is_valid():
         movies_post.save()
         return redirect('homepage')
@@ -32,10 +32,3 @@ def home_delete(request, id):
     return redirect('homepage')
     contex = {'movies_delete':movies_delete}
     return render(request,'gum/homedelete.html',contex)
-
-
-
-
-
-
-    
