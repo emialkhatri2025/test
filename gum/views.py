@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from gum.models import movies
 from gum.models import movieType
 from gum.forms import movie_forms
+from django.core.paginator import Paginator
 
 def home(request):
     movies_type = movies.objects.all()
