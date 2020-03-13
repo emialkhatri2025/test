@@ -6,6 +6,11 @@ from django.core.paginator import Paginator
 
 def home(request):
     movies_type = movies.objects.all()
+    paginator = Paginator(movies_type,2) #3 means show 3 movies
+    page_number = request.GET.get('page')
+    movies_type = paginator.get_page(page_number)
+
+
     contex = {'movies_type':movies_type}
 
     return render(request, 'gum/home.html', contex)

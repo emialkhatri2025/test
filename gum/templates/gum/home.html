@@ -10,6 +10,26 @@
     <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
   </p>
 </div>
+
+<div class="pagination">
+  {% if movies_type.has_previous %}
+    <a href="?page=1">first</a>
+    <a href="?page={{ movies_type.previous_page_number }}">previous</a>
+  {% endif %}
+  {% for num in movies_type.paginator.page_range %}
+    {% if movies_type.number == num %}
+      <strong>{{num }}</strong>
+    {% elif num > movies_type.number|add:'-2' and num < movies_type.number|add:'2' %}
+      {{ num }}
+    {% endif %}
+  {% endfor %}
+  {% if movies_type.has_next %}
+    <a href="?page={{movies_type.next_page_number}}">next</a>
+    <a href="?page={{ movies_type.paginator.num.pages }}">last</a>
+  {% endif %}
+
+
+</div>
 <div class="testcard">
   <div class="row">
       {% for movies_types in movies_type %}
