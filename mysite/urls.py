@@ -7,4 +7,5 @@ urlpatterns = [
     path('', include('crudetest.urls')),
     path('',include('employee.urls')),
     path('',include('gum.urls')),
+    path('',include('event.urls')),
 ]

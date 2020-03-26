@@ -6,14 +6,16 @@ from django.core.paginator import Paginator
 
 def home(request):
     movies_type = movies.objects.all()
-    paginator = Paginator(movies_type,2) #3 means show 3 movies
+    #to find the total number of objects on database that is stored
+    movies_type_count = movies.objects.count()
+    paginator = Paginator(movies_type,8) #3 means show 3 movies
     page_number = request.GET.get('page')
     movies_type = paginator.get_page(page_number)
 
-
-    contex = {'movies_type':movies_type}
-
+    contex = {'movies_type':movies_type,
+                'movies_type_count':movies_type_count}
     return render(request, 'gum/home.html', contex)
+
 
 def home_post(request):
     movies_post = movie_forms(request.POST or None)
